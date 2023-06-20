@@ -1,3 +1,5 @@
+package Arrays.NonDecreasingArray;
+
 class Solution {
     public boolean checkPossibility(int[] nums) {
         int count = 0;
