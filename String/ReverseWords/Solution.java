@@ -1,4 +1,4 @@
-package String;
+package String.ReverseWords;
 
 class Solution {
     public String reverseWords(String s) {
