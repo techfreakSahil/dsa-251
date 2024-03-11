@@ -19,5 +19,6 @@ public class TrickyTemplate {
             }
             System.out.println(flag == 1 ? "yes" : "no");
         }
+        sc.close();
     }
 }
