@@ -6,6 +6,7 @@ class Solution {
        arr[first]= arr[second];
        arr[second]=temp;
    }
+   
    public int firstMissingPositive(int[] nums) {
    int i=0;
    while(i<nums.length){
