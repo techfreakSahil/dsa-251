@@ -1,26 +1,11 @@
-import java.util.ArrayList;
-
 public class Solution {
-    public int findNearSquare(int index, ArrayList<Integer> a, ArrayList<Integer> b, int[] arr, int n) {
+    public int findNearSquare(int index, int sum_a, int sum_b, int[] arr, int n) {
         if (index == n) {
-            int sum_a = 0;
-            int sum_b = 0;
-            for (Integer x : a) {
-                sum_a += x;
-            }
-            System.out.println("sum_a: " + sum_a);
-            for (Integer x : b) {
-                sum_b += x;
-            }
             return Math.abs(sum_a * sum_a - sum_b * sum_b);
         }
-        a.add(arr[index]);
-        int res1 = findNearSquare(index + 1, a, b, arr, n);
-        a.remove(a.size() - 1);
 
-        b.add(arr[index]);
-        int res2 = findNearSquare(index + 1, a, b, arr, n);
-        b.remove(b.size() - 1);
+        int res1 = findNearSquare(index + 1, sum_a + arr[index], sum_b, arr, n);
+        int res2 = findNearSquare(index + 1, sum_a, sum_b + arr[index], arr, n);
 
         return Math.min(res1, res2);
     }
@@ -28,10 +13,8 @@ public class Solution {
     public static void main(String[] args) {
         Solution sol = new Solution();
         int[] arr = { 4, 5, 10, 3 };
-        ArrayList<Integer> a = new ArrayList<>();
-        ArrayList<Integer> b = new ArrayList<>();
         int n = arr.length;
-        int res = sol.findNearSquare(0, a, b, arr, n);
+        int res = sol.findNearSquare(0, 0, 0, arr, n);
         System.out.println(res);
     }
 }
