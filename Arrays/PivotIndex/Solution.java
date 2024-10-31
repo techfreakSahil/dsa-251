@@ -1,3 +1,5 @@
+package Arrays.PivotIndex;
+
 public class Solution {
     public int findMiddleIndex(int[] nums) {
         int n = nums.length;
